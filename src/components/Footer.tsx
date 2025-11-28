@@ -6,13 +6,13 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <Box sx={{ bgcolor: '#f2f6fc', display: 'flex', justifyContent: 'space-between', pt: '30px', px: '20px', mt: '100px' }}>
+    <Box sx={{ bgcolor: '#f2f6fc', display: 'flex', justifyContent: 'space-between', pt: '40px', px: '20px', mt: '100px' }}>
       <Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-          <Box sx={{ width: '180px', height: '180px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'start', gap: 4 }}>
+          <Box sx={{ width: '180px', height: '180px', mt: '-40px' }}>
             <img src="/public/icons/icon-header.svg" alt="" />
           </Box>
-          <Typography sx={{ maxWidth: '320px', color: '#273896', fontSize: '24px', fontWeight: 700, pl: '30px', borderLeft: '2px solid red ' }}>
+          <Typography sx={{ maxWidth: '350px', color: '#273896', fontSize: '24px', fontWeight: 700, pl: '30px', borderLeft: '2px solid red ' }}>
             TRƯỜNG ĐẠI HỌC <br /> KHOA HỌC VÀ CÔNG NGHỆ HÀ NỘI
           </Typography>
         </Box>
