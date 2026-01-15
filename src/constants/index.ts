@@ -1,1 +1,2 @@
-export const BASE_URL = "http://172.18.2.88:4000/api/auth";
+const ipConfig = "192.168.12.29";
+export const BASE_URL = `http://${ipConfig}:4000/api/auth`;

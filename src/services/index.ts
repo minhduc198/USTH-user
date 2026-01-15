@@ -6,6 +6,8 @@ import type {
   RegisterRequest,
   RegisterResponse,
   ResetPasswordRequest,
+  UpdateDetailRequest,
+  UpdateDetailResponse,
 } from "../types";
 import http from "../utils/http";
 
@@ -79,6 +81,14 @@ export class Auth {
       throw new Error(`reset mat khau khong thanh cong`);
     }
   }
+
+  static async updateDetail(payload: UpdateDetailRequest) {
+    const response = await http.put<UpdateDetailResponse>(
+      "update-detail",
+      payload
+    );
+    return response.data;
+  }
 }
 
 export const authLogin = (payload: LoginRequest) => Auth.login(payload);
@@ -90,3 +100,6 @@ export const forgotPassword = (payload: ForgotPasswordRequest) =>
   Auth.forgotPassword(payload);
 export const resetPassword = (payload: ResetPasswordRequest) =>
   Auth.resetPassword(payload);
+
+export const updateDetail = (payload: UpdateDetailRequest) =>
+  Auth.updateDetail(payload);

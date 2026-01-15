@@ -4,8 +4,11 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 import { authLogout, getProfile } from "../services";
+import { useNavigate } from "react-router";
+import { pathConfig } from "../router/path";
 
 export default function Profile() {
+  const navigate = useNavigate();
   const { setIsAuthenticated } = useContext(AppContext);
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null
@@ -38,6 +41,10 @@ export default function Profile() {
     logoutMutation();
   };
 
+  const handleProfile = () => {
+    navigate(pathConfig.profile);
+  };
+
   return (
     <>
       <Box
@@ -55,7 +62,9 @@ export default function Profile() {
         <Avatar sx={{ width: 28, height: 28, fontSize: 14 }}>
           {profileData?.fullname.charAt(0).toUpperCase()}
         </Avatar>
-        <Typography sx={{ fontSize: 14 }}>{profileData?.fullname}</Typography>
+        <Typography sx={{ fontSize: 18, color: "white" }}>
+          {profileData?.fullname}
+        </Typography>
       </Box>
       <Popover
         id={id}
@@ -70,9 +79,16 @@ export default function Profile() {
       >
         <Box sx={{ paddingBlock: 1, paddingInline: 3 }}>
           <Typography
-            sx={{ fontSize: 14, color: "rgba(0, 0, 0, 0.54)", marginBottom: 1 }}
+            sx={{
+              fontSize: 14,
+              marginBottom: 1,
+              textAlign: "center",
+              cursor: "pointer",
+              fontWeight: 600,
+            }}
+            onClick={handleProfile}
           >
-            {profileData?.email}
+            Profile
           </Typography>
           <Button
             sx={{ width: "100%", textTransform: "capitalize" }}

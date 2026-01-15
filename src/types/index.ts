@@ -3,6 +3,8 @@ export interface RegisterRequest {
   email: string;
   username: string;
   password: string;
+  license: string;
+  expire: number;
 }
 
 export interface LoginRequest {
@@ -31,9 +33,25 @@ export interface ForgotPasswordResponse {
   message: string;
 }
 
+export interface UpdateDetailRequest {
+  fullname?: string;
+  email?: string;
+  new_username?: string;
+  license?: string;
+  new_password?: string;
+  expire?: number;
+}
+
+export interface UpdateDetailResponse {
+  message: string;
+  user: IProfile;
+}
+
 export interface IProfile {
   id: string;
   fullname: string;
   email: string;
   username: string;
+  license: string;
+  expire: number;
 }

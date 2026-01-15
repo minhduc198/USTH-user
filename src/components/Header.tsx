@@ -1,26 +1,37 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
 import Profile from "./Profile";
+import { useLocation, useNavigate } from "react-router";
+import { pathConfig } from "../router/path";
 
 const headerMenu = ["Home", "News", "Q&A", "Instructions", "ERP"];
 const headerTab = [
-  "Study",
-  "Project",
-  "Form",
-  "Scholarship",
-  "Rewards",
-  "Free",
-  "Parking",
+  "study",
+  "project",
+  "form",
+  "scholarship",
+  "rewards",
+  "free",
+  "parking",
 ];
 
 export default function Header() {
-  // const location = useLocation();
-  // const pathName = location.pathname;
+  const location = useLocation();
+  const pathName = location.pathname;
+  const getTab = pathName.replace("/", "");
+
   const [activeMenu, setActiveMenu] = useState<string>("Home");
+  const navigate = useNavigate();
   const handleChangeMenu = (
     menu: "Home" | "News" | "Q&A" | "Instructions" | "ERP"
   ) => {
     setActiveMenu(menu);
+  };
+
+  const goToParking = (tab: string) => {
+    if (tab === "parking") {
+      navigate(pathConfig.parking);
+    }
   };
 
   return (
@@ -81,11 +92,13 @@ export default function Header() {
               sx={{
                 fontSize: "20px",
                 fontWeight: 500,
-                color: `${tab === "" ? "red" : "black"}`,
+                color: `${tab === getTab ? "red" : "black"}`,
                 cursor: "pointer",
                 transition: "all 0.2s ease",
                 "&:hover": { color: "red" },
+                textTransform: "capitalize",
               }}
+              onClick={() => goToParking(tab)}
             >
               {tab}
             </Box>

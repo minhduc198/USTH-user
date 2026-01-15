@@ -22,6 +22,7 @@ import ForgotPassword from "./FortgotPassword";
 import { FacebookIcon, GoogleIcon } from "./CustomerIcon";
 import { pathConfig } from "../router/path";
 import TextFieldInput from "../components/TextFieldInput";
+import usthImage from "../../public/images/usth2.jpg";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
@@ -49,6 +50,11 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up("sm")]: {
     padding: theme.spacing(4),
   },
+  backgroundImage: `url(${usthImage})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+
   "&::before": {
     content: '""',
     display: "block",

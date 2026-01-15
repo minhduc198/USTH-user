@@ -4,4 +4,5 @@ export const pathConfig = {
   login: "/login",
   register: "/register",
   resetPassword: "/reset-password/:token",
+  profile: "/profile",
 };

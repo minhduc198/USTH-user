@@ -9,6 +9,7 @@ import Login from "../login";
 import Register from "../register";
 import ResetPassword from "../resetPassword";
 import App from "../App";
+import ProfilePage from "../components/ProfilePage";
 
 function ProtectedRoute() {
   const { isAuthenticated } = useContext(AppContext);
@@ -39,7 +40,13 @@ export const router = createBrowserRouter([
           {
             path: "/",
             Component: Layout,
-            children: [{ path: pathConfig.parking, Component: Parking }],
+            children: [
+              { path: pathConfig.parking, Component: Parking },
+              {
+                path: pathConfig.profile,
+                Component: ProfilePage,
+              },
+            ],
           },
         ],
       },

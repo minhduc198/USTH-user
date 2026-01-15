@@ -20,6 +20,8 @@
     "notistack": "^3.0.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-hook-form": "^7.68.0",
+    "react-qr-code": "^2.0.18",
     "react-router": "^7.9.6",
     "react-router-dom": "^7.9.5",
     "yup": "^1.7.1"

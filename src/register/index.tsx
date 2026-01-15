@@ -20,6 +20,7 @@ import { authRegister } from "../services";
 import type { RegisterRequest } from "../types";
 import { pathConfig } from "../router/path";
 import TextFieldInput from "../components/TextFieldInput";
+import usthImage from "../../public/images/usth2.jpg";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
@@ -40,13 +41,17 @@ const Card = styled(MuiCard)(({ theme }) => ({
   }),
 }));
 
-const SignInContainer = styled(Stack)(({ theme }) => ({
+const RegisterContainer = styled(Stack)(({ theme }) => ({
   height: "calc((1 - var(--template-frame-height, 0)) * 100dvh)",
   minHeight: "100%",
   padding: theme.spacing(2),
   [theme.breakpoints.up("sm")]: {
     padding: theme.spacing(4),
   },
+  backgroundImage: `url(${usthImage})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
   "&::before": {
     content: '""',
     display: "block",
@@ -100,13 +105,15 @@ export default function Register() {
       username: studentId,
       email,
       password,
+      license: "",
+      expire: 0,
     });
   };
 
   return (
     <FormProvider {...methods}>
       <CssBaseline enableColorScheme />
-      <SignInContainer direction="column" justifyContent="center">
+      <RegisterContainer direction="column" justifyContent="center">
         <Card variant="outlined">
           <Typography
             component="h1"
@@ -216,7 +223,7 @@ export default function Register() {
             </Typography>
           </Box>
         </Card>
-      </SignInContainer>
+      </RegisterContainer>
     </FormProvider>
   );
 }
