@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import { Controller, useForm, useWatch } from "react-hook-form";
+import { Controller, set, useForm, useWatch } from "react-hook-form";
 import type { InferType } from "yup";
 import { licenseSchema } from "../schemas";
 import { getProfile, updateDetail } from "../services";
@@ -53,15 +53,17 @@ export default function Parking() {
     onSuccess: () => {
       refetch();
     },
+
+    onError: () => {
+      setSnackbar(false);
+    },
   });
 
   useEffect(() => {
-    if (Date.now() > Date.now() + 30 * 24 * 60 * 60 * 1000) {
+    if (profileData?.expire && Date.now() > profileData.expire) {
       updateDetail({ expire: 0 });
     }
-
-    return;
-  }, []);
+  }, [profileData?.expire]);
 
   const onSubmit = () => {
     setOpenConfirm(true);
@@ -74,7 +76,6 @@ export default function Parking() {
 
   const handlePaymentSuccess = () => {
     setSnackbar(true);
-
     const expire = Date.now() + 30 * 24 * 60 * 60 * 1000;
 
     updateDetailMutation(
@@ -86,7 +87,7 @@ export default function Parking() {
         onSuccess: () => {
           setOpenQR(false);
         },
-      }
+      },
     );
   };
 
@@ -107,7 +108,7 @@ export default function Parking() {
           setIsEditing(false);
           setOpenChangeConfirm(false);
         },
-      }
+      },
     );
   };
 

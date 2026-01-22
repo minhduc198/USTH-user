@@ -41,7 +41,7 @@ export class Auth {
       throw new Error(
         `lấy chi tiết tài khoản không thành công: ${
           error instanceof Error ? error.message : "Unknown error"
-        }`
+        }`,
       );
     }
   }
@@ -73,7 +73,7 @@ export class Auth {
         {
           new_password: body.new_password,
         },
-        { headers: { Authorization: `Bearer ${body.token}` } }
+        { headers: { Authorization: `Bearer ${body.token}` } },
       );
 
       return response.data;
@@ -85,7 +85,7 @@ export class Auth {
   static async updateDetail(payload: UpdateDetailRequest) {
     const response = await http.put<UpdateDetailResponse>(
       "update-detail",
-      payload
+      payload,
     );
     return response.data;
   }
