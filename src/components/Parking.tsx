@@ -122,7 +122,7 @@ export default function Parking() {
   return (
     <Box sx={{ maxWidth: 700, mx: "auto", mt: 6, px: 2 }}>
       <Typography variant="h4" fontWeight={700} textAlign="center" gutterBottom>
-        Monthly parking registration for {month}
+        Monthly parking registration for Month {month}
       </Typography>
 
       <Typography
