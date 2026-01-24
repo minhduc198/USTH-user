@@ -25,7 +25,7 @@ export default function QrCodeDialog({
   onSuccess,
   isLoading,
 }: Props) {
-  const momoPhone = "0999667117";
+  const momoPhone = "0912345678";
   const amount = 50000;
 
   const momoURL = `https://momo.vn/api/msg/?phone=${momoPhone}&amount=${amount}&comment=BIENSO_${license}`;
@@ -45,7 +45,7 @@ export default function QrCodeDialog({
             pb: 1,
           }}
         >
-          Thanh toán MoMo
+          MoMo payment
         </DialogTitle>
 
         <DialogContent sx={{ textAlign: "center", px: 2 }}>
@@ -62,7 +62,7 @@ export default function QrCodeDialog({
           </Box>
 
           <Typography mt={2} color="text.secondary" fontSize="0.9rem">
-            Quét mã bằng MoMo để thanh toán phí đăng ký biển số.
+            Scan the MoMo QR code to pay the license plate registration fee.
           </Typography>
 
           <Button
@@ -83,7 +83,7 @@ export default function QrCodeDialog({
             {isLoading ? (
               <CircularProgress size={22} color="inherit" />
             ) : (
-              "Đã thanh toán"
+              "Successfully paid"
             )}
           </Button>
 
@@ -92,7 +92,7 @@ export default function QrCodeDialog({
             sx={{ mt: 1, color: "text.secondary" }}
             onClick={onClose}
           >
-            Hủy
+            Cancel
           </Button>
         </DialogContent>
       </Box>

@@ -20,14 +20,6 @@ export default function ProfilePage() {
       ? new Date(profileData.expire).toLocaleDateString("vi-VN")
       : "No register";
 
-  const profile = {
-    username: "Nguyen Minh Duc",
-    studentId: "20211234",
-    licensePlate: "59A-123.45",
-    expire: "2026-12-31",
-    paymentStatus: "Active", // Active | Pending | Expired
-  };
-
   const getPaymentStatus = (expire?: number) => {
     if (!expire || expire === 0) {
       return { label: "Unactive", color: "error" as const };

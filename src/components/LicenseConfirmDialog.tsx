@@ -22,22 +22,22 @@ export default function LicenseConfirmDialog({
 }: Props) {
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
-      <DialogTitle>Xác nhận biển số xe</DialogTitle>
+      <DialogTitle>Confirm your license plate</DialogTitle>
 
       <DialogContent>
         <Typography>
-          Bạn có chắc muốn đăng ký biển số:
+          Are you sure you want to register the license plate:
           <b> {licenseNumber} </b> ?
         </Typography>
       </DialogContent>
 
       <DialogActions>
         <Button onClick={onClose} color="secondary">
-          Huỷ
+          Cancel
         </Button>
 
         <Button variant="contained" onClick={onConfirm}>
-          Xác nhận
+          Confirm
         </Button>
       </DialogActions>
     </Dialog>

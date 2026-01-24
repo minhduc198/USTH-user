@@ -122,7 +122,7 @@ export default function Parking() {
   return (
     <Box sx={{ maxWidth: 700, mx: "auto", mt: 6, px: 2 }}>
       <Typography variant="h4" fontWeight={700} textAlign="center" gutterBottom>
-        Đăng ký gửi xe Tháng {month}
+        Monthly parking registration for {month}
       </Typography>
 
       <Typography
@@ -131,31 +131,31 @@ export default function Parking() {
         color="text.secondary"
         mb={4}
       >
-        Quản lý và thanh toán gửi xe hàng tháng dành cho sinh viên USTH
+        Monthly parking management and payment for USTH students
       </Typography>
 
       <Card sx={{ borderRadius: 3, boxShadow: 3 }}>
         <CardContent>
           <Typography variant="h6" fontWeight={600} mb={2}>
-            Thông tin sinh viên
+            Student information
           </Typography>
 
           <Stack spacing={1.5}>
             <Typography>
-              <b>Họ và tên:</b> {profileData?.fullname}
+              <b>Full name:</b> {profileData?.fullname}
             </Typography>
             <Typography>
-              <b>Mã sinh viên:</b> {profileData?.username}
+              <b>Student ID:</b> {profileData?.username}
             </Typography>
             <Typography>
-              <b>Ngành học:</b> ICT
+              <b>Major:</b> ICT
             </Typography>
           </Stack>
 
           <Divider sx={{ my: 3 }} />
 
           <Typography variant="h6" fontWeight={600} mb={2}>
-            Biển số xe
+            License plate
           </Typography>
 
           {!profileData?.license || !profileData.expire || isEditing ? (
@@ -169,7 +169,7 @@ export default function Parking() {
                   render={({ field, fieldState }) => (
                     <TextField
                       {...field}
-                      label="Nhập biển số xe"
+                      label="Enter license plate"
                       placeholder="VD: 29S1-371.94"
                       fullWidth
                       error={!!fieldState.error}
@@ -194,12 +194,12 @@ export default function Parking() {
                     size="large"
                     onClick={cancelChangeLicense}
                   >
-                    Huỷ
+                    Cancel
                   </Button>
                 )}
               </Stack>
               <Typography sx={{ mt: 4 }} variant="body2" color="text.secondary">
-                *Lưu ý: Mỗi học sinh chỉ đăng ký 1 biển số xe
+                *Note: Each student can register only one license plate
               </Typography>
             </form>
           ) : (
@@ -211,7 +211,7 @@ export default function Parking() {
               }}
             >
               <Typography>
-                <b>Biển số xe của bạn:</b> {profileData.license}
+                <b>Your license plate:</b> {profileData.license}
               </Typography>
 
               <Button
@@ -220,7 +220,7 @@ export default function Parking() {
                 size="small"
                 sx={{ px: 2, py: 1, borderRadius: 2 }}
               >
-                Thay đổi
+                Change
               </Button>
             </Box>
           )}
@@ -249,8 +249,8 @@ export default function Parking() {
       >
         <Alert severity="success">
           {isEditing
-            ? "Thay đổi biển số xe thành công!"
-            : "Đăng ký gửi xe thành công!"}
+            ? "License plate updated successfully!"
+            : "Parking registration successful!"}
         </Alert>
       </Snackbar>
 
@@ -258,10 +258,10 @@ export default function Parking() {
         open={openChangeConfirm}
         onClose={() => setOpenChangeConfirm(false)}
       >
-        <DialogTitle>Xác nhận thay đổi biển số</DialogTitle>
+        <DialogTitle>Confirm license plate change</DialogTitle>
 
         <DialogContent>
-          <Typography>Bạn có muốn thay đổi biển số:</Typography>
+          <Typography>Do you want to change the license plate:</Typography>
 
           <Typography fontWeight={600} mt={1}>
             {profileData?.license ?? ""} → {licenseInput}
@@ -273,11 +273,11 @@ export default function Parking() {
             variant="outlined"
             onClick={() => setOpenChangeConfirm(false)}
           >
-            Huỷ
+            Cancel
           </Button>
 
           <Button variant="contained" onClick={handleConfirmChangeLicense}>
-            Xác nhận
+            Confirm
           </Button>
         </DialogActions>
       </Dialog>

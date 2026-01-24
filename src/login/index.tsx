@@ -14,15 +14,15 @@ import { useMutation } from "@tanstack/react-query";
 import * as React from "react";
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 import { NavLink } from "react-router";
-import { authLoginSchemas } from "../schemas";
-import { AppContext } from "../contexts/AppContext";
-import type { LoginRequest } from "../types";
-import { authLogin } from "../services";
-import ForgotPassword from "./FortgotPassword";
-import { FacebookIcon, GoogleIcon } from "./CustomerIcon";
-import { pathConfig } from "../router/path";
-import TextFieldInput from "../components/TextFieldInput";
 import usthImage from "../../public/images/usth2.jpg";
+import TextFieldInput from "../components/TextFieldInput";
+import { AppContext } from "../contexts/AppContext";
+import { pathConfig } from "../router/path";
+import { authLoginSchemas } from "../schemas";
+import { authLogin } from "../services";
+import type { LoginRequest } from "../types";
+import { GoogleIcon } from "./CustomerIcon";
+import ForgotPassword from "./FortgotPassword";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
@@ -192,14 +192,7 @@ export default function Login() {
             >
               Sign in with Google
             </Button>
-            <Button
-              fullWidth
-              variant="outlined"
-              onClick={() => alert("Sign in with Facebook")}
-              startIcon={<FacebookIcon />}
-            >
-              Sign in with Facebook
-            </Button>
+
             <Typography sx={{ textAlign: "center" }}>
               Don&apos;t have an account?{" "}
               <NavLink to={pathConfig.register} style={{ color: "#1976d2" }}>
