@@ -139,7 +139,7 @@ export default function Login() {
               <TextFieldInput
                 label=""
                 name="studentId"
-                placeholder="Ex: 23bi14099"
+                placeholder="Ex: 23bi14000"
                 required
                 variant="outlined"
                 sxTextFieldInput={{
