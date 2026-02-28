@@ -24,7 +24,7 @@ import { getProfile, updateDetail } from "../services";
 
 import LicenseConfirmDialog from "../components/LicenseConfirmDialog";
 import type { UpdateDetailRequest } from "../types";
-import QrCodeDialog from "./QrCodeDialog";
+import QRCodeDialog from "./QRCodeDialog";
 
 export default function Parking() {
   const month = new Date().getMonth() + 1;
@@ -231,7 +231,7 @@ export default function Parking() {
         licenseNumber={licenseInput}
       />
 
-      <QrCodeDialog
+      <QRCodeDialog
         isLoading={isPending}
         open={openQR}
         onClose={() => setOpenQR(false)}

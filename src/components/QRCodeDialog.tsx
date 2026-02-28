@@ -17,7 +17,7 @@ interface Props {
   isLoading: boolean;
 }
 
-export default function QrCodeDialog({
+export default function QRCodeDialog({
   open,
   onClose,
   license,
