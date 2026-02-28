@@ -24,7 +24,7 @@ import { getProfile, updateDetail } from "../services";
 
 import LicenseConfirmDialog from "../components/LicenseConfirmDialog";
 import type { UpdateDetailRequest } from "../types";
-import QrCodeDialog from "../components/QrCodeDialog";
+import QrCodeDialog from "./QrCodeDialog";
 
 export default function Parking() {
   const month = new Date().getMonth() + 1;
