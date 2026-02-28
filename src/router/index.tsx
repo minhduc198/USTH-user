@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout";
 import Parking from "../components/Parking";
-import { Component, useContext } from "react";
+import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 import { Navigate, Outlet } from "react-router";
 import { pathConfig } from "./path";

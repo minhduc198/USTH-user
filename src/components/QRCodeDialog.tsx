@@ -1,14 +1,13 @@
 import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  Button,
   Box,
+  Button,
   CircularProgress,
+  Dialog,
+  DialogContent,
+  DialogTitle,
   Typography,
 } from "@mui/material";
 import QRCode from "react-qr-code";
-import { useState } from "react";
 
 interface Props {
   open: boolean;

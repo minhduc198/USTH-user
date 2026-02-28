@@ -18,16 +18,13 @@ import {
 } from "@mui/material";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import { Controller, set, useForm, useWatch } from "react-hook-form";
-import type { InferType } from "yup";
+import { Controller, useForm, useWatch } from "react-hook-form";
 import { licenseSchema } from "../schemas";
 import { getProfile, updateDetail } from "../services";
 
 import LicenseConfirmDialog from "../components/LicenseConfirmDialog";
 import type { UpdateDetailRequest } from "../types";
-import QrCodeDialog from "./QrCodeDialog";
-
-type FormData = InferType<typeof licenseSchema>;
+import QrCodeDialog from "../components/QrCodeDialog";
 
 export default function Parking() {
   const month = new Date().getMonth() + 1;
