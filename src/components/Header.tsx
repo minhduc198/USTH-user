@@ -23,7 +23,7 @@ export default function Header() {
   const [activeMenu, setActiveMenu] = useState<string>("Home");
   const navigate = useNavigate();
   const handleChangeMenu = (
-    menu: "Home" | "News" | "Q&A" | "Instructions" | "ERP"
+    menu: "Home" | "News" | "Q&A" | "Instructions" | "ERP",
   ) => {
     setActiveMenu(menu);
   };
@@ -52,7 +52,7 @@ export default function Header() {
             <Box
               onClick={() =>
                 handleChangeMenu(
-                  menu as "Home" | "News" | "Q&A" | "Instructions" | "ERP"
+                  menu as "Home" | "News" | "Q&A" | "Instructions" | "ERP",
                 )
               }
               key={menu}
@@ -83,7 +83,7 @@ export default function Header() {
         }}
       >
         <Box sx={{ position: "absolute", top: -40, left: 100 }}>
-          <img src="/public/icons/icon-header.svg" alt="" />
+          <img src="/icons/icon-header.svg" alt="" />
         </Box>
         <Box sx={{ display: "flex", gap: 2 }}>
           {headerTab.map((tab) => (

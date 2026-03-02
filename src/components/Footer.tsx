@@ -18,7 +18,7 @@ export default function Footer() {
       <Box>
         <Box sx={{ display: "flex", alignItems: "start", gap: 4 }}>
           <Box sx={{ width: "180px", height: "180px", mt: "-40px" }}>
-            <img src="/public/icons/icon-header.svg" alt="" />
+            <img src="/icons/icon-header.svg" alt="" />
           </Box>
           <Typography
             sx={{
